@@ -1,6 +1,11 @@
 package com.cmput660.mooddetect;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +20,13 @@ import java.io.FileReader;
  */
 @WebServlet("/WekaRequester")
 public class WekaRequester extends HttpServlet {
+	
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+    static final String DB_URL="jdbc:mysql://127.0.0.1:3306/moodstore";
+//  Database credentials
+    static final String USER = "root";
+    static final String PASS = "cmput660";
+    
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -51,6 +63,34 @@ public class WekaRequester extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		
+		 try {
+			 
+			 String uname = request.getParameter("USER_NAME");
+			 String hr = request.getParameter("HEART_RATE");
+			 String detect = request.getParameter("DETECTED");
+			 String humid = request.getParameter("HUMID");
+			 String temp = request.getParameter("TEMP");
+			 String cloud = request.getParameter("CLOUD");
+			 String pressure =  request.getParameter("PRESS");
+			 String wind = request.getParameter("WIND");
+			 String gt = request.getParameter("GT");
+	         // Register JDBC driver
+			 
+	         Class.forName("com.mysql.jdbc.Driver");
+
+	         // Open a connection
+	         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+	         // Execute SQL query
+	         Statement stmt = conn.createStatement();
+	         String sql;
+	         sql = "INSERT INTO moodcollect(userid,heartrate,detected,humidity,temperature,cloudiness,pressure,windiness, groundtruth) VALUES ('"+uname+"',"+hr+",'"+detect+"',"+humid+","+temp+","+cloud+","+pressure+","+wind+",'"+gt+"')";
+	         stmt.executeUpdate(sql);
+		 }
+		 catch(Exception e) {
+			 response.getWriter().append(""+e);
+		 }
 		response.getWriter().append("Thank you for the Feedback");
 	}
 
