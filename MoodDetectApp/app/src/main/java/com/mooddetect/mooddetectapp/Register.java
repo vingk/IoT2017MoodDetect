@@ -59,7 +59,7 @@ public class Register extends Activity{
 
                                             final Intent intent = new Intent(context, DeviceScanActivity.class);
                                             startActivity(intent);
-                                            finish();
+
                                         }
                                     }
         );
@@ -71,6 +71,6 @@ public class Register extends Activity{
                                       }
                                   }
         );
-        finish();
+
     }
 }

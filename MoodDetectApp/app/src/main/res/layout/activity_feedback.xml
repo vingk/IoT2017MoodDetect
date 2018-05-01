@@ -20,9 +20,10 @@
                 android:textSize="18sp"/>
             <Space android:layout_width="5dp"
                 android:layout_height="wrap_content"/>
-            <TextView android:id="@+id/fusername"
+            <EditText android:id="@+id/fusername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="edit email"
                 android:textSize="18sp"/>
         </LinearLayout>
         <LinearLayout android:orientation="horizontal"

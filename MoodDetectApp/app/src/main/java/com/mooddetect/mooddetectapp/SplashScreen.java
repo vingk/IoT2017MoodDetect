@@ -38,27 +38,29 @@ public class SplashScreen extends Activity{
 
         // if no registration is found, redirect to registration page
         Toast.makeText(getApplicationContext(), mUser +" "+ mDeviceName, Toast.LENGTH_LONG).show();
-        if(mUser == null || mHeight ==null || mWeight==null){
+        if(mUser == null){
             Log.i(TAG, "User not registered, going to Registration screen");
             final Intent intent = new Intent(this, Register.class);
             startActivity(intent);
-            finish();
+
 
         }
 
         //if blueetooth device has not been setup yet, redirect to device setup
-        if(mDeviceAddress==null || mDeviceName==null){
+        else if(mDeviceAddress==null || mDeviceName==null){
             Log.i(TAG, "Bluetooth device not registered, moving to Device setup screen");
             final Intent intent = new Intent(this, DeviceScanActivity.class);
             startActivity(intent);
-            finish();
+
         }
 
-        // if user and device have been setup, redirect to main thread.
-        Log.i(TAG, "User info and Device info exists, moving to Device control");
-        final Intent intent = new Intent(this, DeviceControlActivity.class);
-        startActivity(intent);
-        finish();
+        else {
+            // if user and device have been setup, redirect to main thread.
+            Log.i(TAG, "User info and Device info exists, moving to Device control");
+            final Intent intent = new Intent(this, DeviceControlActivity.class);
+            startActivity(intent);
+
+        }
     }
 
 }
