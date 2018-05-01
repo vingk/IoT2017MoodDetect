@@ -23,7 +23,11 @@ public class Register extends Activity{
     Context context = this ;
     String TAG = "RegisterActivity";
 
+    /**
+     * @param savedInstanceState
+     */
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -34,7 +38,7 @@ public class Register extends Activity{
         weight = (EditText)findViewById(R.id.weight);
         cancel = (Button)findViewById(R.id.cancel);
 
-
+        //onclick listner to detect button click
         register.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -67,5 +71,6 @@ public class Register extends Activity{
                                       }
                                   }
         );
+        finish();
     }
 }

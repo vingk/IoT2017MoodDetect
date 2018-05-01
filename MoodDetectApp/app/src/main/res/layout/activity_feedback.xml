@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mooddetect.mooddetectapp.FeedbackActivity">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/fusername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Rate"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/fheartrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detected Mood"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/fdetected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/fhumidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/ftemperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cloudiness"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/fcloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pressure"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/fpressure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Windiness"
+                android:textSize="18sp"/>
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/fwindiness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/alert_dark_frame"
+                android:backgroundTint="@android:color/holo_green_light"
+                android:onClick="positiveMood"
+                android:text="Positive Mood"
+                android:textSize="18sp" />
+            <Space android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/alert_dark_frame"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:onClick="negativeMood"
+                android:text="Negative Mood"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView android:id="@+id/fresponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -35,6 +35,7 @@ public class WekaRequester extends HttpServlet {
 		int hrvalue = Integer.parseInt(hr);
 		
 		// by logistic regression model, the following weights have been obtained from WEKA.
+		//to be updated with Random forest model, once individual data is obtained.
 		float mood= (float) ((hrvalue * -0.0064) +  1.7377) ;
 		if(mood>=1) {
 			response.getWriter().append("Positive");
@@ -49,7 +50,8 @@ public class WekaRequester extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		response.getWriter().append("Thank you for the Feedback");
 	}
 
 }

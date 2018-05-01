@@ -106,7 +106,7 @@
             android:onClick="feedbackDetect" />
         <Space android:layout_width="5dp"
             android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/feedbadkq"
+        <TextView android:id="@+id/feedbackq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Not the right Mood ?"

@@ -210,16 +210,30 @@ public class DeviceControlActivity extends Activity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                mMoodResponse .setText("No Response!");
+                mMoodResponse.setText("No Response!");
             }
         });
 
-// Add the request to the RequestQueue.
+        // Add the request to the RequestQueue.
         queue.add(stringRequest);
+    }
+
+    public void feedbackDetect(View view){
+
+        Log.i(TAG, "FeedbackDetect: Sending feedback");
+        final Intent intent = new Intent(this, FeedbackActivity.class);
+
+        String heartrate = mDataField.getText().toString();
+        intent.putExtra("HEART_RATE", heartrate);
+
+        String detectedMood = "No Data";
+        detectedMood = mMoodResponse.getText().toString();
+        intent.putExtra("DETECTED_MOOD", detectedMood);
+        startActivity(intent);
+        finish();
 
 
     }
-    @Override
     protected void onResume() {
         super.onResume();
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
